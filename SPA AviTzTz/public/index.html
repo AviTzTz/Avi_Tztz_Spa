@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#" id="nav-home-link">NaVa</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation" style="background-color: rgb(237, 237, 237);">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="nav-about-link">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-none" href="#" id="nav-add-picture-link">Add Picture</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex user-data-container user-before-connection">
+                        <a href="#" class="nav-link" id="nav-signup-link">Sign Up</a>
+                        <a href="#" class="nav-link" id="nav-login-link">Login</a>
+                    </div>
+                    <div class="d-none user-data-container user-after-connection">
+                        <a href="#" class="nav-link" id="nav-account-link"><i class="bi bi-person-circle"></i></a>
+                        <a href="#" class="nav-link nav-logout-link"><i class="bi bi-box-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="toast-container">
+            <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            </div>
+        </div>
+    </header>
+    <main>
+
+        <div id="home-page" class="d-block">
+            <div class="popup-wrapper d-none justify-content-center align-items-center" id="editPropertiesPopup">
+                <div class="popup-div d-flex bg-dark row" id="editPropertiesPopupChild">
+                    <div class="card-imgs col-sm-12 col-lg-6 d-flex justify-content-center align-items-center">
+                        <img src="https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <div class="card col-sm-12 col-lg-6 d-flex justify-content-center text-center gap-2 popup-card text-white bg-dark">
+                        <div class="mb-3 exit-button-popup">
+                            <button class="btn text-white fs-3" type="button"><i class="bi bi-x-circle"></i>
+                            </button>
+                        </div>
+                        <h2 class="fs-4 mt-5">Edit Picture</h2>
+                        <div class="mb-3">
+                            <label for="name-popup-input" class="form-label">Name</label>
+                            <input type="email" class="form-control" id="name-popup-input">
+                        </div>
+                        <div class="mb-3">
+                            <label for="image-popup-input" class="form-label">Image Url</label>
+                            <input type="email" class="form-control" id="image-popup-input">
+                        </div>
+                        <div class="mb-3">
+                            <label for="credit-popup-input" class="form-label">Credit</label>
+                            <input type="email" class="form-control" id="credit-popup-input">
+                        </div>
+                        <div class="mb-3">
+                            <label for="price-pop-up-input" class="form-label">Price</label>
+                            <input type="email" class="form-control" id="price-popup-input">
+                        </div>
+                        <div class="d-flex column-gap-2 mb-3 mb-lg-0">
+                            <input type="button" class="btn btn-outline-success form-control col-sm" id="submit-popup-btn" value="Submit">
+                            <input type="button" class="btn btn-outline-danger form-control col-sm" id="cancel-popup-btn" value="Cancel">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex title-content">
+                <h1>Nature Valley</h1>
+                <p class="title-description">Welcome to Nature's Beauty, an online gallery dedicated to showcasing the
+                    breathtaking and awe-inspiring beauty of the natural world through stunning photography. Our website
+                    is the perfect destination for nature lovers, outdoor enthusiasts, and anyone who appreciates the
+                    beauty and wonder of the great outdoors.</p>
+            </div>
+            <div class="home-page-display-search-container">
+                <div class="home-page-icons-displays-container">
+                    <div>
+                        <button type="button" class="btn btn-outline-dark" id="home-display-carousel">
+                            <i class="bi bi-file-earmark-slides"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-dark" id="home-display-gallery">
+                            <i class="bi bi-microsoft"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-dark" id="home-display-list">
+                            <i class="bi bi-card-list"></i>
+                        </button>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-outline-dark" id="homeDisplaySortASC">
+                            <i class="bi bi-sort-alpha-down"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-dark" id="homeDisplaySortDESC">
+                            <i class="bi bi-sort-alpha-up"></i>
+                        </button>
+                    </div>
+                </div>
+                <form class="d-none home-page-form-search" role="search">
+                    <input id="homeDisplaySearch" class="form-control me-2" type="search" placeholder="Search"
+                        aria-label="Search">
+                    <button class="btn btn-outline-dark" type="submit">Search</button>
+                </form>
+            </div>
+            <div class="carousel d-none align-items-center" id="properties-carousel">
+                <div class="img-container d-flex justify-content-center align-items-center">
+                </div>
+                <button type="button" class="btn" id="back-carusel-btn">
+                    <i class="bi bi-arrow-left-circle"></i>
+                </button>
+                <button type="button" class="btn" id="next-carusel-btn">
+                    <i class="bi bi-arrow-right-circle"></i>
+                </button>
+            </div>
+            <div id="properties-gallery" class="d-none">
+                <div class="row text-center insert-properties-to-gallery">
+                </div>
+            </div>
+            <div id="properties-list" class="d-none">
+            </div>
+        </div>
+        <div id="about-page" class="d-none">
+
+        </div>
+        <div id="sign-up-page" class="d-none">
+            <h1 class="mb-4">Sign Up</h1>
+            <form onsubmit="event.preventDefault()" class="d-grid row-gap-4" novalidate>
+                <div class="row row-gap-2 column-gap-3">
+                    <label class="form-label col-form-label-md">Name</label>
+                    <div class="col">
+                        <input id="name-input-signup" type="text" class="form-control" placeholder="FirstName*"
+                            required>
+                        <div class="signup-name-alert text-danger d-none"></div>
+                    </div>
+                    <div class="col">
+                        <input id="last-name-input-signup" type="text" class="form-control" placeholder="LastName*"
+                            required>
+                        <div class="signup-last-name-alert text-danger"></div>
+                    </div>
+                </div>
+                <div class="row row-gap-2">
+                    <label class="form-label col-form-label-md">Address</label>
+                    <div class="col">
+                        <input type="text" class="form-control state-input-signup" placeholder="State">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control country-input-signup" placeholder="Country">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control city-input-signup" placeholder="City">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control street-input-signup" placeholder="Street">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control house-number-input-signup" placeholder="House Number">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control zipcode-input-signup" placeholder="Zip Code">
+                    </div>
+                </div>
+                <div class="row row-gap-2 column-gap-3">
+                    <label class="form-label col-form-label-md">Means of contact</label>
+                    <div class="col">
+                        <input id="email-input-signup" type="text" class="form-control" placeholder="Email*">
+                        <div class="signup-email-alert text-danger"></div>
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control phone-number-input-signup" placeholder="Phone">
+                    </div>
+                </div>
+                <div class="row row-gap-2 column-gap-3">
+                    <label class="form-label col-form-label-md">Security</label>
+                    <div class="col">
+                        <input id="password-input-signup" type="password" class="form-control" placeholder="Password*"
+                            required>
+                        <div class="signup-password-alert text-danger"></div>
+                    </div>
+                    <div class="col">
+                        <input id="re-password-input-signup" type="password" class="form-control"
+                            placeholder="Re Password*" required>
+                        <div class="signup-re-password-alert text-danger"></div>
+                    </div>
+                </div>
+                <div class="col-md-12 d-flex justify-content-center">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input switch-check-signup" type="checkbox" role="switch"
+                            id="flexSwitchCheckChecked">
+                        <label class="form-check-label">
+                            Business Account
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                    <button id="signup-button-submit" class="btn btn-outline-success" type="submit"
+                        disabled>Submit</button>
+                </div>
+            </form>
+
+        </div>
+        <div id="login-page" class="d-none row-gap-5">
+            <h1>Login</h1>
+            <form onsubmit="event.preventDefault()" class="d-flex row justify-content-center row-gap-4">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input id="email-input-login" type="email" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp">
+                    <div class="login-email-alert text-danger"></div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input id="password-input-login" type="password" class="form-control" id="exampleInputPassword1">
+                    <div class="login-password-alert text-danger"></div>
+                </div>
+                <button id="submit-button-login" type="submit" class="btn btn-primary col-4">Submit</button>
+            </form>
+        </div>
+        <div id="account-page" class="d-none">
+            <div id="account-details-display" class="container text-center d-none">
+                <div class="d-flex col-sm-12 justify-content-center align-items-center fs-2">
+                    <div class="col-sm-12">
+                        <p class="name-lastname-p-acoount"></p>
+                    </div>
+                </div>
+                <div class="row fs-5">
+                    <div class="col-sm">
+                        <p class="state-p-acoount"></p>
+                    </div>
+                    <div class="col-sm">
+                        <p class="country-p-acoount"></p>
+                    </div>
+                    <div class="col-sm">
+                        <p class="city-p-acoount"></p>
+                    </div>
+                </div>
+                <div class="row fs-5">
+                    <div class="col-sm">
+                        <p class="street-p-acoount"></p>
+                    </div>
+                    <div class="col-sm">
+                        <p class="house-number-p-acoount"></p>
+                    </div>
+                    <div class="col-sm">
+                        <p class="zip-p-acoount"></p>
+                    </div>
+                </div>
+                <div class="row fs-5">
+                    <div class="col-sm">
+                        <p class="phone-p-acoount"></p>
+                    </div>
+                    <div class="col-sm">
+                        <p class="email-p-acoount"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="d-flex align-items-start justify-content-center">
+                        <button id="edit-button-account" type="submit"
+                            class="btn btn-outline-warning col-sm-6 col-md-2">Edit</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="change-details-display" class="container d-none text-center row-gap-5">
+                <h2 class="my-auto">Account Management</h2>
+                <div class="d-flex row col-sm-12 justify-content-center column-gap-2">
+                    <div class="col-sm-12 col-md-4">
+                        <input type="text" class="form-control name-input-account" placeholder="FirstName">
+                        <div class="account-name-alert text-danger"></div>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <input type="text" class="form-control last-name-input-account" placeholder="LastName">
+                        <div class="account-last-name-alert text-danger"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm">
+                        <input type="text" class="form-control state-input-account" placeholder="State">
+                    </div>
+                    <div class="col-sm">
+                        <input type="text" class="form-control country-input-account" placeholder="Country">
+                    </div>
+                    <div class="col-sm">
+                        <input type="text" class="form-control city-input-account" placeholder="City">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm">
+                        <input type="text" class="form-control street-input-account" placeholder="Street">
+                    </div>
+                    <div class="col-sm">
+                        <input type="text" class="form-control house-number-input-account" placeholder="House Number">
+                    </div>
+                    <div class="col-sm">
+                        <input type="text" class="form-control zip-input-account" placeholder="Zip">
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control phone-input-account col-sm-6" placeholder="Phone">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="d-flex row col-sm-12 justify-content-center column-gap-2">
+                        <div class="col-sm-12 col-md-4">
+                            <input type="text" class="form-control email-input-account" placeholder="Email">
+                            <div class="account-email-alert text-danger"></div>
+                        </div>
+                        <div class="col-sm-12 col-md-4">
+                            <input type="password" class="form-control new-password-input-account"
+                                placeholder="New Password">
+                            <div class="account-new-password-alert text-danger"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-sm-4">
+                        <input type="password" class="form-control old-password-input-account col-sm-6"
+                            placeholder="Old Password">
+                        <div class="account-old-password-alert text-danger"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="d-flex col-sm-12 change-details justify-content-center column-gap-2 mx-auto mb-5">
+                        <div class="col-sm-12 col-md-4">
+                            <button id="update-button-account" type="submit" class="btn btn-outline-success col-sm-12"
+                                disabled>Update</button>
+                        </div>
+                        <div class="col-sm-12 col-md-4">
+                            <button id="cancel-button-account" type="submit"
+                                class="btn btn-outline-danger col-sm-12">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="d-flex">
+        Created by AviTzTz &copy; 2023
+    </footer>
+    <script src="../src/app.js" type="module"></script>
+</body>
+
+</html>
